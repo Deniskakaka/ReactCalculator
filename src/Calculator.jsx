@@ -56,7 +56,7 @@ function Calculator() {
             setAnswear('');
         }
     };
-    console.log(cut("02+3"))
+    console.log(cut("2*3"))
     function action(e) {
         if (e.target.classList.value.slice(-4) === "plus" && plus) {
             if (answear === "") {
