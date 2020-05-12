@@ -46,7 +46,6 @@ function Calculator() {
             }
         }
         if (e.target.innerHTML === "." && number === "0") {
-            setAnswear("0" + ".");
             setNumber("0" + ".");
         }
         if (String(number.length) > 12) {
@@ -108,7 +107,7 @@ function Calculator() {
         if (e.target.classList.value.slice(-6) === "equals" && equals) {
             if (String(eval(answear)).length > 10) {
                 setAnswear(eval(answear).toExponential(4));
-            } else {
+            } else if (answear !== "") {
                 setAnswear(answear + "=" + eval(answear))
                 setNumber("0");
                 setEquals(false);
