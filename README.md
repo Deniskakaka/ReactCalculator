@@ -8,3 +8,6 @@ It's a simple calculator written in React.
   <li><a href="https://sass-lang.com/">SASS</a></li>
   <li><a href="https://reactjs.org/">React</a></li>
 </ol>
+
+<h2>Link on project</h2>
+    https://deniskakaka.github.io/ReactCalculator/
