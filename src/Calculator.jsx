@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { answearDesicion } from "./functionDesicion.js";
+import { answearDesicion, cut } from "./functionDesicion.js";
 import "./main.scss";
 
 function Calculator() {
@@ -46,6 +46,9 @@ function Calculator() {
             }
         }
         if (e.target.innerHTML === "." && number === "0") {
+            if (answear === "") {
+                setAnswear("0" + ".")
+            }
             setNumber("0" + ".");
         }
         if (String(number.length) > 12) {
@@ -53,7 +56,7 @@ function Calculator() {
             setAnswear('');
         }
     };
-
+    console.log(cut("02+3"))
     function action(e) {
         if (e.target.classList.value.slice(-4) === "plus" && plus) {
             if (answear === "") {
@@ -105,10 +108,10 @@ function Calculator() {
             }
         }
         if (e.target.classList.value.slice(-6) === "equals" && equals) {
-            if (String(eval(answear)).length > 10) {
-                setAnswear(eval(answear).toExponential(4));
+            if (String(cut(answear)).length > 10) {
+                setAnswear(cut(answear).toExponential(4));
             } else if (answear !== "") {
-                setAnswear(answear + "=" + eval(answear))
+                setAnswear(answear + "=" + cut(answear))
                 setNumber("0");
                 setEquals(false);
             }
